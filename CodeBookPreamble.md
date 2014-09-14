@@ -11,7 +11,7 @@ cat CodeBookPreamble.md > CodeBook.md; cat VarData.md >> CodeBook.md
 
 ##Transformation
 
-This describes how run_analysis.R has tidied the data in 6 steps.
+This describes how [run_analysis.R](run_analysis.R) has tidied the data in 6 steps.
 
 ###Step 1: Merge test and train datasets
 For the purposes of this exercise we want to process both test and train together.

@@ -19,7 +19,7 @@ In this case these are the mean, stddev, and energy measures of the time-domain 
 
 The tidied dataset contains *only* the average mean and stddev measures across all original variables, over subject and activity.
 
-See [CodeBook.md](CodeBook.md) for the precise steps in which the data was tidied.
+See [CodeBook.md](CodeBook.md) for the precise steps in which the data was tidied, and more information about the tidied data.
 
 ##Files
 
@@ -35,11 +35,11 @@ In order to run the files, you must have:
 This repository contains the following files:
 
 * README.md: this file
-* run_analysis.R: the file which processes the supplied UCI Dataset.  Produces tidy.txt, VarData.md
-* CodeBook.md: Description of how the data was transformed, plus definitions of the fields
+* [run_analysis.R](run_analysis.R): the file which processes the supplied UCI Dataset.  Produces tidy.txt, VarData.md
+* [CodeBook.md](CodeBook.md): Description of how the data was transformed, plus definitions of the fields
 
 Supporting files:
 
-* CodeBookPreamble.md: Description of how the data was transformed.  Intended for use in CodeBook.md
-* VarData.md: a generated file containing definitions of the fields
-* tidy.txt: a generated file containing the main result of running run_analysis.R
+* [CodeBookPreamble.md](CodeBookPreamble.md): Description of how the data was transformed.  Intended for use in CodeBook.md
+* [VarData.md](VarData.md): a generated file containing definitions of the fields
+* [tidy.txt](tidy.txt): a generated file containing the main result of running run_analysis.R

@@ -93,12 +93,13 @@ smallerDs <- mainDs[,meanStdCols]
 # Output of this is joinedDs
 
 joinedDs <- cbind(smallerDs, subjectDs, activityDs) %>%
-  inner_join(ACTIVITY_LABELS, by="activity")
-
+  inner_join(ACTIVITY_LABELS, by="activity") %>%
+  select(-activity)
+  
 
 # Step 4: Label dataset with descriptive variable names
 # =====================================================
-colnames(joinedDs) <- c(COL_NAMES[meanStdCols], "subject","activity","activity_name")
+colnames(joinedDs) <- c(COL_NAMES[meanStdCols], "subject","activity_name")
 
 # Optionally write out something we can look at in Excel...
 write.csv(joinedDs, "narrow.csv", row.names=FALSE)
@@ -134,8 +135,14 @@ describe.source <- function(name) {
 describe.type <- function(name) {
   if(name == "subject") "Integer 1-30 indicating subject number"
   else if(name == "activity_name") paste(ACTIVITY_LABELS[,2], collapse=", ")
-  else if(grepl("mean\\(\\)", name)) "Double indicating average mean for subject and activity"
-  else if(grepl("std\\(\\)", name)) "Double indicating average stddev for subject and activity"
+  else if(grepl("mean\\(\\)", name)) "Double: average mean"
+  else if(grepl("std\\(\\)", name)) "Double: average stddev"
+  else "N/A"
+}
+
+describe.freqRange <- function(name) {
+  if(grepl("Body", name)) "Body"
+  else if(grepl("Grav", name)) "Gravity"
   else "N/A"
 }
 
@@ -143,6 +150,11 @@ codeBook <- data.frame(variable_name=colnames(avgDs), stringsAsFactors = FALSE) 
   mutate(type=sapply(variable_name, describe.type)) %>%
   mutate(domain=sapply(variable_name, describe.domain)) %>%
   mutate(source=sapply(variable_name, describe.source)) %>%
-  print
+  mutate(freq_range=sapply(variable_name, describe.freqRange))
 
-write.table(codeBook, "VarData.md", sep = "|", row.names=FALSE)
+#Insert lines into the 1st row so it renders as an md table
+codeBookMd <- rbind(
+            rep("----",length(codeBook[1,])),
+            codeBook)
+
+write.table(codeBookMd, "VarData.md", sep = "|", row.names=FALSE, quote = FALSE)

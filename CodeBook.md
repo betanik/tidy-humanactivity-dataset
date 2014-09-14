@@ -4,13 +4,14 @@ CodeBook
 This file describes the steps in which the data was tidied, and gives an overview of the fields available.
 
 CodeBook.md is created by the command
+
 ```
-cat 
+cat CodeBookPreamble.md > CodeBook.md; cat VarData.md >> CodeBook.md
 ```
 
 ##Transformation
 
-This describes how run_analysis.R has tidied the data in 6 steps.
+This describes how [run_analysis.R](run_analysis.R) has tidied the data in 6 steps.
 
 ###Step 1: Merge test and train datasets
 For the purposes of this exercise we want to process both test and train together.
@@ -40,73 +41,73 @@ This generates a data dictionary for tidyDs.  It is stored in a dataframe called
 Variable Data Dictionary
 ========================
 
-"variable_name"|"type"|"domain"|"source"
-"subject"|"Integer 1-30 indicating subject number"|"N/A"|"N/A"
-"activity_name"|"WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING"|"N/A"|"N/A"
-"tBodyAcc-mean()-X"|"Double indicating average mean for subject and activity"|"Time"|"Accelerometer"
-"tBodyAcc-mean()-Y"|"Double indicating average mean for subject and activity"|"Time"|"Accelerometer"
-"tBodyAcc-mean()-Z"|"Double indicating average mean for subject and activity"|"Time"|"Accelerometer"
-"tBodyAcc-std()-X"|"Double indicating average stddev for subject and activity"|"Time"|"Accelerometer"
-"tBodyAcc-std()-Y"|"Double indicating average stddev for subject and activity"|"Time"|"Accelerometer"
-"tBodyAcc-std()-Z"|"Double indicating average stddev for subject and activity"|"Time"|"Accelerometer"
-"tGravityAcc-mean()-X"|"Double indicating average mean for subject and activity"|"Time"|"Accelerometer"
-"tGravityAcc-mean()-Y"|"Double indicating average mean for subject and activity"|"Time"|"Accelerometer"
-"tGravityAcc-mean()-Z"|"Double indicating average mean for subject and activity"|"Time"|"Accelerometer"
-"tGravityAcc-std()-X"|"Double indicating average stddev for subject and activity"|"Time"|"Accelerometer"
-"tGravityAcc-std()-Y"|"Double indicating average stddev for subject and activity"|"Time"|"Accelerometer"
-"tGravityAcc-std()-Z"|"Double indicating average stddev for subject and activity"|"Time"|"Accelerometer"
-"tBodyAccJerk-mean()-X"|"Double indicating average mean for subject and activity"|"Time"|"Accelerometer"
-"tBodyAccJerk-mean()-Y"|"Double indicating average mean for subject and activity"|"Time"|"Accelerometer"
-"tBodyAccJerk-mean()-Z"|"Double indicating average mean for subject and activity"|"Time"|"Accelerometer"
-"tBodyAccJerk-std()-X"|"Double indicating average stddev for subject and activity"|"Time"|"Accelerometer"
-"tBodyAccJerk-std()-Y"|"Double indicating average stddev for subject and activity"|"Time"|"Accelerometer"
-"tBodyAccJerk-std()-Z"|"Double indicating average stddev for subject and activity"|"Time"|"Accelerometer"
-"tBodyGyro-mean()-X"|"Double indicating average mean for subject and activity"|"Time"|"Gyroscope"
-"tBodyGyro-mean()-Y"|"Double indicating average mean for subject and activity"|"Time"|"Gyroscope"
-"tBodyGyro-mean()-Z"|"Double indicating average mean for subject and activity"|"Time"|"Gyroscope"
-"tBodyGyro-std()-X"|"Double indicating average stddev for subject and activity"|"Time"|"Gyroscope"
-"tBodyGyro-std()-Y"|"Double indicating average stddev for subject and activity"|"Time"|"Gyroscope"
-"tBodyGyro-std()-Z"|"Double indicating average stddev for subject and activity"|"Time"|"Gyroscope"
-"tBodyGyroJerk-mean()-X"|"Double indicating average mean for subject and activity"|"Time"|"Gyroscope"
-"tBodyGyroJerk-mean()-Y"|"Double indicating average mean for subject and activity"|"Time"|"Gyroscope"
-"tBodyGyroJerk-mean()-Z"|"Double indicating average mean for subject and activity"|"Time"|"Gyroscope"
-"tBodyGyroJerk-std()-X"|"Double indicating average stddev for subject and activity"|"Time"|"Gyroscope"
-"tBodyGyroJerk-std()-Y"|"Double indicating average stddev for subject and activity"|"Time"|"Gyroscope"
-"tBodyGyroJerk-std()-Z"|"Double indicating average stddev for subject and activity"|"Time"|"Gyroscope"
-"tBodyAccMag-mean()"|"Double indicating average mean for subject and activity"|"Time"|"Accelerometer"
-"tBodyAccMag-std()"|"Double indicating average stddev for subject and activity"|"Time"|"Accelerometer"
-"tGravityAccMag-mean()"|"Double indicating average mean for subject and activity"|"Time"|"Accelerometer"
-"tGravityAccMag-std()"|"Double indicating average stddev for subject and activity"|"Time"|"Accelerometer"
-"tBodyAccJerkMag-mean()"|"Double indicating average mean for subject and activity"|"Time"|"Accelerometer"
-"tBodyAccJerkMag-std()"|"Double indicating average stddev for subject and activity"|"Time"|"Accelerometer"
-"tBodyGyroMag-mean()"|"Double indicating average mean for subject and activity"|"Time"|"Gyroscope"
-"tBodyGyroMag-std()"|"Double indicating average stddev for subject and activity"|"Time"|"Gyroscope"
-"tBodyGyroJerkMag-mean()"|"Double indicating average mean for subject and activity"|"Time"|"Gyroscope"
-"tBodyGyroJerkMag-std()"|"Double indicating average stddev for subject and activity"|"Time"|"Gyroscope"
-"fBodyAcc-mean()-X"|"Double indicating average mean for subject and activity"|"Frequency"|"Accelerometer"
-"fBodyAcc-mean()-Y"|"Double indicating average mean for subject and activity"|"Frequency"|"Accelerometer"
-"fBodyAcc-mean()-Z"|"Double indicating average mean for subject and activity"|"Frequency"|"Accelerometer"
-"fBodyAcc-std()-X"|"Double indicating average stddev for subject and activity"|"Frequency"|"Accelerometer"
-"fBodyAcc-std()-Y"|"Double indicating average stddev for subject and activity"|"Frequency"|"Accelerometer"
-"fBodyAcc-std()-Z"|"Double indicating average stddev for subject and activity"|"Frequency"|"Accelerometer"
-"fBodyAccJerk-mean()-X"|"Double indicating average mean for subject and activity"|"Frequency"|"Accelerometer"
-"fBodyAccJerk-mean()-Y"|"Double indicating average mean for subject and activity"|"Frequency"|"Accelerometer"
-"fBodyAccJerk-mean()-Z"|"Double indicating average mean for subject and activity"|"Frequency"|"Accelerometer"
-"fBodyAccJerk-std()-X"|"Double indicating average stddev for subject and activity"|"Frequency"|"Accelerometer"
-"fBodyAccJerk-std()-Y"|"Double indicating average stddev for subject and activity"|"Frequency"|"Accelerometer"
-"fBodyAccJerk-std()-Z"|"Double indicating average stddev for subject and activity"|"Frequency"|"Accelerometer"
-"fBodyGyro-mean()-X"|"Double indicating average mean for subject and activity"|"Frequency"|"Gyroscope"
-"fBodyGyro-mean()-Y"|"Double indicating average mean for subject and activity"|"Frequency"|"Gyroscope"
-"fBodyGyro-mean()-Z"|"Double indicating average mean for subject and activity"|"Frequency"|"Gyroscope"
-"fBodyGyro-std()-X"|"Double indicating average stddev for subject and activity"|"Frequency"|"Gyroscope"
-"fBodyGyro-std()-Y"|"Double indicating average stddev for subject and activity"|"Frequency"|"Gyroscope"
-"fBodyGyro-std()-Z"|"Double indicating average stddev for subject and activity"|"Frequency"|"Gyroscope"
-"fBodyAccMag-mean()"|"Double indicating average mean for subject and activity"|"Frequency"|"Accelerometer"
-"fBodyAccMag-std()"|"Double indicating average stddev for subject and activity"|"Frequency"|"Accelerometer"
-"fBodyBodyAccJerkMag-mean()"|"Double indicating average mean for subject and activity"|"Frequency"|"Accelerometer"
-"fBodyBodyAccJerkMag-std()"|"Double indicating average stddev for subject and activity"|"Frequency"|"Accelerometer"
-"fBodyBodyGyroMag-mean()"|"Double indicating average mean for subject and activity"|"Frequency"|"Gyroscope"
-"fBodyBodyGyroMag-std()"|"Double indicating average stddev for subject and activity"|"Frequency"|"Gyroscope"
-"fBodyBodyGyroJerkMag-mean()"|"Double indicating average mean for subject and activity"|"Frequency"|"Gyroscope"
-"fBodyBodyGyroJerkMag-std()"|"Double indicating average stddev for subject and activity"|"Frequency"|"Gyroscope"
-"activity"|"N/A"|"N/A"|"N/A"
+variable_name|type|domain|source|freq_range
+----|----|----|----|----
+subject|Integer 1-30 indicating subject number|N/A|N/A|N/A
+activity_name|WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING|N/A|N/A|N/A
+tBodyAcc-mean()-X|Double: average mean|Time|Accelerometer|Body
+tBodyAcc-mean()-Y|Double: average mean|Time|Accelerometer|Body
+tBodyAcc-mean()-Z|Double: average mean|Time|Accelerometer|Body
+tBodyAcc-std()-X|Double: average stddev|Time|Accelerometer|Body
+tBodyAcc-std()-Y|Double: average stddev|Time|Accelerometer|Body
+tBodyAcc-std()-Z|Double: average stddev|Time|Accelerometer|Body
+tGravityAcc-mean()-X|Double: average mean|Time|Accelerometer|Gravity
+tGravityAcc-mean()-Y|Double: average mean|Time|Accelerometer|Gravity
+tGravityAcc-mean()-Z|Double: average mean|Time|Accelerometer|Gravity
+tGravityAcc-std()-X|Double: average stddev|Time|Accelerometer|Gravity
+tGravityAcc-std()-Y|Double: average stddev|Time|Accelerometer|Gravity
+tGravityAcc-std()-Z|Double: average stddev|Time|Accelerometer|Gravity
+tBodyAccJerk-mean()-X|Double: average mean|Time|Accelerometer|Body
+tBodyAccJerk-mean()-Y|Double: average mean|Time|Accelerometer|Body
+tBodyAccJerk-mean()-Z|Double: average mean|Time|Accelerometer|Body
+tBodyAccJerk-std()-X|Double: average stddev|Time|Accelerometer|Body
+tBodyAccJerk-std()-Y|Double: average stddev|Time|Accelerometer|Body
+tBodyAccJerk-std()-Z|Double: average stddev|Time|Accelerometer|Body
+tBodyGyro-mean()-X|Double: average mean|Time|Gyroscope|Body
+tBodyGyro-mean()-Y|Double: average mean|Time|Gyroscope|Body
+tBodyGyro-mean()-Z|Double: average mean|Time|Gyroscope|Body
+tBodyGyro-std()-X|Double: average stddev|Time|Gyroscope|Body
+tBodyGyro-std()-Y|Double: average stddev|Time|Gyroscope|Body
+tBodyGyro-std()-Z|Double: average stddev|Time|Gyroscope|Body
+tBodyGyroJerk-mean()-X|Double: average mean|Time|Gyroscope|Body
+tBodyGyroJerk-mean()-Y|Double: average mean|Time|Gyroscope|Body
+tBodyGyroJerk-mean()-Z|Double: average mean|Time|Gyroscope|Body
+tBodyGyroJerk-std()-X|Double: average stddev|Time|Gyroscope|Body
+tBodyGyroJerk-std()-Y|Double: average stddev|Time|Gyroscope|Body
+tBodyGyroJerk-std()-Z|Double: average stddev|Time|Gyroscope|Body
+tBodyAccMag-mean()|Double: average mean|Time|Accelerometer|Body
+tBodyAccMag-std()|Double: average stddev|Time|Accelerometer|Body
+tGravityAccMag-mean()|Double: average mean|Time|Accelerometer|Gravity
+tGravityAccMag-std()|Double: average stddev|Time|Accelerometer|Gravity
+tBodyAccJerkMag-mean()|Double: average mean|Time|Accelerometer|Body
+tBodyAccJerkMag-std()|Double: average stddev|Time|Accelerometer|Body
+tBodyGyroMag-mean()|Double: average mean|Time|Gyroscope|Body
+tBodyGyroMag-std()|Double: average stddev|Time|Gyroscope|Body
+tBodyGyroJerkMag-mean()|Double: average mean|Time|Gyroscope|Body
+tBodyGyroJerkMag-std()|Double: average stddev|Time|Gyroscope|Body
+fBodyAcc-mean()-X|Double: average mean|Frequency|Accelerometer|Body
+fBodyAcc-mean()-Y|Double: average mean|Frequency|Accelerometer|Body
+fBodyAcc-mean()-Z|Double: average mean|Frequency|Accelerometer|Body
+fBodyAcc-std()-X|Double: average stddev|Frequency|Accelerometer|Body
+fBodyAcc-std()-Y|Double: average stddev|Frequency|Accelerometer|Body
+fBodyAcc-std()-Z|Double: average stddev|Frequency|Accelerometer|Body
+fBodyAccJerk-mean()-X|Double: average mean|Frequency|Accelerometer|Body
+fBodyAccJerk-mean()-Y|Double: average mean|Frequency|Accelerometer|Body
+fBodyAccJerk-mean()-Z|Double: average mean|Frequency|Accelerometer|Body
+fBodyAccJerk-std()-X|Double: average stddev|Frequency|Accelerometer|Body
+fBodyAccJerk-std()-Y|Double: average stddev|Frequency|Accelerometer|Body
+fBodyAccJerk-std()-Z|Double: average stddev|Frequency|Accelerometer|Body
+fBodyGyro-mean()-X|Double: average mean|Frequency|Gyroscope|Body
+fBodyGyro-mean()-Y|Double: average mean|Frequency|Gyroscope|Body
+fBodyGyro-mean()-Z|Double: average mean|Frequency|Gyroscope|Body
+fBodyGyro-std()-X|Double: average stddev|Frequency|Gyroscope|Body
+fBodyGyro-std()-Y|Double: average stddev|Frequency|Gyroscope|Body
+fBodyGyro-std()-Z|Double: average stddev|Frequency|Gyroscope|Body
+fBodyAccMag-mean()|Double: average mean|Frequency|Accelerometer|Body
+fBodyAccMag-std()|Double: average stddev|Frequency|Accelerometer|Body
+fBodyBodyAccJerkMag-mean()|Double: average mean|Frequency|Accelerometer|Body
+fBodyBodyAccJerkMag-std()|Double: average stddev|Frequency|Accelerometer|Body
+fBodyBodyGyroMag-mean()|Double: average mean|Frequency|Gyroscope|Body
+fBodyBodyGyroMag-std()|Double: average stddev|Frequency|Gyroscope|Body
+fBodyBodyGyroJerkMag-mean()|Double: average mean|Frequency|Gyroscope|Body
+fBodyBodyGyroJerkMag-std()|Double: average stddev|Frequency|Gyroscope|Body

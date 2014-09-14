@@ -17,7 +17,7 @@ The raw measurements have been post-processed in a number of ways; see the featu
 
 In this case these are the mean, stddev, and energy measures of the time-domain body accelerometer X-axis.
 
-The tidied dataset contains *only* the average mean and stddev measures across all original variables, over subject and activity.
+The [tidied dataset](tidy.txt) contains *only* the average mean and stddev measures across all original variables, over subject and activity.
 
 See [CodeBook.md](CodeBook.md) for the precise steps in which the data was tidied, and more information about the tidied data.
 
